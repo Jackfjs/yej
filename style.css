@@ -1,0 +1,605 @@
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #f2f2f2;
+}
+
+*,
+*::after,
+*::before{
+    box-sizing: inherit;
+}
+/* добро пожаловать  */
+.into-h2{
+    margin-bottom: 10px;
+}
+.navbar{
+    width: 100%;
+    height: 70px;
+    box-shadow: 0 4px 10px rgba(0,0,0, .1);
+    position: fixed; 
+    width: 100%; 
+    top: 0; 
+    z-index: 1000; 
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar .container{
+   height: inherit; 
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.navbar-menu{
+    list-style: none;
+    padding-left: 0%;
+    margin-bottom: 0;
+
+}
+
+.navbar-menu li{
+    display: inline-block;
+}
+
+.navbar-menu li a{
+    display: inline-block;
+    color: black;
+    opacity: 0.6;
+    text-decoration: none;
+    padding: 10px;
+    transition: all .07s ease-in-out;
+}
+
+.navbar-menu li a:hover{
+opacity: 1;
+}
+
+.nawbar-wrap{
+  display: flex;
+    flex-flow: row nowrap;
+}
+
+.callback{
+    margin-left: 30px;
+    padding: 10px 30px;
+    background-color: coral;
+    border-radius: 100px;
+    color:white;
+    text-decoration: none;
+   transition: all .1s ease-in-out;
+   box-shadow: 0 4px 6px rgb(255, 117, 80, .2);
+}
+
+.callback:hover{
+    transform:scale(1.04);
+    color:white;
+    box-shadow: 0 9px 6px rgb(255, 127, 80, .2);
+}
+.navbar-brand{
+    font-weight: 600;
+    font-size: 16px;
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-brand:hover{
+ color: coral;
+}
+
+.contentinfo{
+    font-size: 32px;
+    text-align: center;
+
+}
+
+
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.intro-text {
+    text-align: center;
+    margin-right: 20px;
+    font-size: 24px;
+}
+
+.image-container {
+    text-align: center;
+}
+
+.image-container img {
+    width: 500px;
+    height: auto; 
+    
+}
+
+/* Карточки товаров*/
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.h2{
+    text-align: center; 
+    margin-top: 50px;
+    font-size: 50px;
+}
+.services-title {
+    text-align: center;
+    margin-top: 50px; 
+}
+.services .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.services {
+    text-align: center; 
+}
+
+
+.services {
+    padding: 50px 0;
+    background-color: #f9f9f9; 
+}
+
+.service-card {
+    width: 300px;
+    /* height: 550px; */
+    margin: 0 auto 30px; 
+    background-color: #fff;
+    border-radius: 10px; 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    overflow: hidden; 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.service-card img {
+    width: 200px;
+    height: 175px;
+    border-top-left-radius: 10px; 
+    border-top-right-radius: 10px; 
+}
+
+.service-card h3 {
+    /* margin-top: 20px;
+    font-size: 20px; */
+    border-bottom: 1px solid #ccc; /* Граница для заголовка */
+    padding-bottom: 10px; /* Отступ снизу заголовка */
+    margin-bottom: 10px; /* Отступ снизу заголовка */
+}
+
+.service-card p {
+    /* margin: 10px 0; 
+    padding: 0 20px; 
+    margin-bottom: 10px; */
+    margin-bottom: 10px; /* Добавим небольшой отступ между абзацами */
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.service-card button {
+    display: inline-block;
+    background-color: coral;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+.button-card{
+margin-top: auto;
+    
+}
+.service-card button:hover {
+    background-color: #ff7f50;
+}
+.service-card img{
+    width: 300px; 
+    height: 20  0px;
+}
+
+
+/* окно */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+/* Стили для содержимого модального окна */
+.modal-content {
+    background-color: #fefefe;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+/* Стили для кнопки закрытия модального окна */
+.close {
+    position: absolute;
+    margin-top: 10px;
+    
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #888;
+}
+
+/* Стили для кнопок в модальном окне */
+.modal-button {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: coral;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+/* Стили для кнопок в модальном окне при наведении */
+.modal-button:hover {
+    background-color: #ff7f50;
+}
+
+/* Стили для элементов формы в модальном окне */
+.modal-content input[type="text"],
+.modal-content input[type="tel"],
+.modal-content button {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+.modalh2 {
+    margin-top: 0;
+}
+/* О нас */
+.h1title{
+    text-align: center;
+    font-size: 40px;
+}
+/* .map-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end; 
+    height: 450px;
+    padding-bottom: 20px;
+} */
+.about-us{
+    border: 8px solid coral;
+    border-radius: 20px;
+    padding: 20px;
+    width: 95%;
+    margin: 0 auto;
+    box-shadow: 0 2px 4px #a19999;
+    text-align: justify; /* Равномерно распределяем текст по ширине */
+    font-family: Arial, sans-serif; /* Применяем красивый шрифт */
+    font-size: 18px; /* Уменьшаем размер шрифта */
+    line-height: 1.5; /* Устанавливаем высоту строки */
+    letter-spacing: 0.5px; /* Устанавливаем пробелы между буквами */
+    background-color: rgb(216, 211, 211);
+}
+.about-h2{
+    text-align: center;
+}
+
+/* Подвал */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer p {
+    margin: 0;
+}
+
+.footer-contact {
+    text-align: right;
+}
+
+
+
+/* приколы */
+.animate {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.animate.visible {
+    opacity: 1;
+}
+
+.animate.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* портфолио */
+
+/* .hover-effect-cover {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+    overflow: hidden;
+    max-width: 800px;
+} */
+
+
+
+/* .hover-effect-cover div > img {
+    width: 100%;
+    height: auto; */
+    /* object-fit: cover; Заполнение контейнера, сохраняя соотношение сторон */
+    /* object-position: center; Центрирование изображения */
+    /* transition: transform 0.4s ease-in-out; */
+/* } */
+
+/* .hover-effect-cover div:hover > img {
+    transform: scale(1.1);
+}
+
+.hover-effect-cover div > div.effect-to-top {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: all 0.3s ease-in-out;
+    color: #fff;
+    top: 0;
+    left: 0;
+}
+
+.hover-effect-cover div:hover > div.effect-to-top {
+    opacity: 1;
+} */
+
+/* .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.bg {
+    flex: 0 1 calc(33.33% - 10px);
+    position: relative;
+    margin: 0 5px;
+    overflow: hidden;
+}
+
+.imgbg {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    object-fit: cover;
+}
+
+.blackout {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.75);
+    transition: opacity 0.3s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blackout h4 {
+    margin-top: -15px;
+    transition: margin-top 0.3s ease-in-out;
+    color: white;
+}
+
+.bg:hover .blackout {
+    opacity: 1;
+}
+
+.bg:hover .blackout h4 {
+    margin-top: 0;
+} */
+.port-title{
+    text-align: center;
+    font-size: 50px;
+}
+
+
+.image-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; 
+  }
+  
+  .image-wrapper {
+    position: relative;
+    margin: 5px; /* Добавляем отступы между изображениями */
+    overflow: hidden;
+  }
+  
+  .image-wrapper img {
+    width: 400px; /* Укажите размеры ваших изображений */
+    height: auto;
+    transition: filter 0.3s ease;
+  }
+  
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 266px;
+    background-color: rgba(0, 0, 0, 0.5); /* Затемнение */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+
+  /* Модальное окно */
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding-top: 50px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+
+  .modal-content {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .modal-content img {
+    width: auto;
+    height: 90vh;
+  }
+
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+  }
+
+  .close:hover,
+  .close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .prev,
+  .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+  }
+
+  .next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+  }
+
+  .portfolio-title {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.portfolio-title h2 {
+    font-size: 24px;
+    color: #333; /* Цвет текста, подберите под свой дизайн */
+}
+
+/* контакты */
+
+/* Стили для модального окна */
+.contact-info {
+    border: 8px solid coral; /* Измените толщину рамки по вашему усмотрению */
+    border-radius: 20px;
+    box-shadow: 0 2px 4px #a19999;
+    padding: 20px;
+    width: 30%; /* Ширина блока */
+    box-shadow: 0 2px 4px #a19999;
+    text-align: center; /* Центрируем текст */
+    font-family: Arial, sans-serif; /* Применяем красивый шрифт */
+    margin: 0 auto; /* Центрирование блока по горизонтали */
+    margin-bottom: 20px;
+    background-color: rgb(216, 211, 211);
+}
+  
+  .contact-info h2 {
+    margin-top: 0;
+    font-size: 1.5em; /* Увеличиваем размер заголовка */
+  }
+  
+  .contact-info p {
+    margin: 5px 0;
+    font-size: 1.1em; /* Увеличиваем размер текста */
+  }
+
