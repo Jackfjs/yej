@@ -11,8 +11,31 @@ body{
     box-sizing: inherit;
 }
 /* добро пожаловать  */
-.into-h2{
-    margin-bottom: 10px;
+.intro-text {
+    text-align: center; /* Центрируем текст */
+    margin-bottom: 20px; /* Добавляем небольшое пространство между блоками */
+
+}
+
+.intro-h2 {
+    font-size: 29px; /* Увеличиваем размер шрифта заголовка */
+    color: rgb(0, 0, 0); /* Устанавливаем цвет текста */
+    /* margin-bottom: 80px; */
+}
+
+.intro-text p {
+    border: 8px solid coral; /* Добавляем рамку вокруг текста */
+    border-radius: 20px; /* Закругляем углы рамки */
+    padding: 20px; /* Добавляем отступы внутри рамки */
+    font-family: Arial, sans-serif; /* Применяем красивый шрифт */
+    font-size: 20px; /* Устанавливаем размер шрифта */
+    line-height: 1.6; /* Устанавливаем высоту строки */
+    color: #000000; /* Устанавливаем цвет текста */
+    margin-left: 130px;
+    background-color:  rgb(216, 211, 211);
+    width: 500px;
+    height: 430px;
+    
 }
 .navbar{
     width: 100%;
